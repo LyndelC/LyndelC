@@ -1,1 +1,4 @@
-print("hello world")#add a bit here
+x = 10
+if (x = 10):
+
+    print ("x = 10")
