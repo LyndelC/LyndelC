@@ -1,0 +1,4 @@
+name = "Lyndel"
+age = 21
+
+print(f{'Left Aligned Text': <15}{'Centre Aligned Text': ^25}{'Right Aligned Text: >19'})
