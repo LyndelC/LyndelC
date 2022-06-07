@@ -1,5 +1,5 @@
 # find perimeter of triangle
-# add side1, side2, and side 3
+# add side1, side2, and side3
 # display result
 side1 = float(input("enter length of side 1: "))
 side2 = float(input("enter length of side 2: "))
