@@ -4,27 +4,29 @@ def functionAdd():
     resource = input('URL/Resource: ')
 
 functionAdd()
-
-import os                                       # to check if txt file exists
-if os.path.exists("myCredentials.txt"):
-    fileHandle = open("myCredentials.txt, "a") #fileHandle not recognised, need file name and file
+                                                #needs to write to txt file
+import os                                       # this step is to check if txt file exists
+if os.path.exists("myCredentials.txt"):         #problem with this 
+    Credentials = open("myCredentials.txt", "a") 
+    
 else:
-    fileHandle = open("myCredentials.txt", "w")
-    fileHandle.close()
-    ")
+    Credentials = open("myCredentials.txt", "w")
+    Credentials.close()
 
-#myCredentials = open("myCredentials.txt", "r") #must change fileHandle name
-#print(myCredentials.read())open file
-#fileHandle = open("myCredentials.txt, "a")     #write file, change file and functioin
-#myCredentials.close()
+Credentials = open("myCredentials.txt", "r")    #read file
+print(Credentials.read())                       #open file
+Credentials = open("myCredentials.txt", "a")     #write/append file
+Credentials.close()
 
-#def functionView():    
-    #credentialFile = open("myCredentials.txt", "r")  #open file
-    #data = myCredentials.read()#read 
+def functionView():    
+    credentials = open("myCredentials.txt", "r")   #open file
+    data = Credentials.read()                      #read 
 
-#functionView()         #calling fnView
-#print(f"{'Username : <20} {'Password' : ^30} {'URL/Resource' : >20}")            #display contents with 3 headings and spacings  
+functionView()         #calling fnView
 
+print(f"{'Username' : <20}{'Password' : ^30}{'URL/Resource' : >20}")       #display contents with 3 headings and spacings  
+
+print(Credentials.read())
     #myCredentials = ["Add", "View", "Edit"]  #while loop needs refined for menu options
     #i = 0
     #while i < len(myCredentials):
