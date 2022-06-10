@@ -19,10 +19,10 @@ Credentials = open("myCredentials.txt", "a")     #write/append file
 Credentials.close()
 
 def functionView():    
-    credentials = open("myCredentials.txt", "r")   #open file
-    data = Credentials.read()                      #read 
+    credentials = open("myCredentials.txt", "r")     #open file
+    data = Credentials.read()                        #read 
 
-functionView()         #calling fnView
+functionView()                                       #calling fnView
 
 print(f"{'Username' : <20}{'Password' : ^30}{'URL/Resource' : >20}")       #display contents with 3 headings and spacings  
 
