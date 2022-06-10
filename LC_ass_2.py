@@ -6,7 +6,7 @@ def functionAdd():
 functionAdd()
                                                 #needs to write to txt file
 import os                                       # this step is to check if txt file exists
-if os.path.exists("myCredentials.txt"):         #problem with this 
+if os.path.exists("myCredentials.txt"):         #problem with this, IO operation on closed file 
     Credentials = open("myCredentials.txt", "a") 
     
 else:
