@@ -2,13 +2,11 @@ print("\nThis program is intended to securely store the usernames and passwords 
 
 def Add():
     print("\nEnter username, password and URL/resource\n")
-    global user
     user = input('Username:  ')
-    global pw
     pw = input('Password:  ')
-    global res
     res = input('URL/Resource:  ')
     Credentials = open("myCredentials.txt", "a")        #if the txt file doesn't exist, open function will create a new one
+    
     Credentials.write("Username: ")
     Credentials.write(user) 
     Credentials.write("\n") 
@@ -23,16 +21,16 @@ def Add():
     Credentials.close()  
     
 def View():     
-    Credentials = open("myCredentials.txt", "r") #open txt file                          
+    Credentials = open("myCredentials.txt", "a")            #open txt file if one doesn't already exist
+    Credentials.close()    
+
+    Credentials = open("myCredentials.txt", "r")                         
     print(Credentials.read())
-    Credentials.close()
-    
-    Credentials = open("myCredentials.txt", "a")
-    Credentials.close()
-     # display contents with 3 headings and spacings                                     
-      
+    Credentials.close()   
+
+choice = ''  
+
 # Set an initial value for choice other than the value for 'quit'.
-choice = ('1', '2', '3')
 while choice != 'q':
     print("\nOptions: ")                           
     print("[1] Enter 1 to add your credentials ")
@@ -49,14 +47,6 @@ while choice != 'q':
         print("\nExit\n")  
     else:
         print("\nInvalid entry, please try again.\n")          
-    
-# Print a message that we are all finished.     
+         
 print("Document is now closed")
-
-                             
-
-    
-    
-
-        
 
