@@ -7,6 +7,11 @@ def Add():
     res = input('URL/Resource:  ')
     Credentials = open("myCredentials.txt", "a")        #if the txt file doesn't exist, open function will create a new one
     
+    clearText = "myPassword"
+    charSet="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz`~!@#$%^&*()_-=|\}]{[\"':;?/>.<, "
+    encText = "".join([charSet[(charSet.find(c)+3)%95] for c in clearText])
+    print(encText)
+
     Credentials.write("Username: ")
     Credentials.write(user) 
     Credentials.write("\n") 
@@ -24,11 +29,16 @@ def View():
     Credentials = open("myCredentials.txt", "a")            #open txt file if one doesn't already exist
     Credentials.close()    
 
-    Credentials = open("myCredentials.txt", "r")                         
+    Credentials = open("myCredentials.txt", "r") 
     print(Credentials.read())
+    clearText = "myPassword"
+    charSet="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz`~!@#$%^&*()_-=|\}]{[\"':;?/>.<, "
+    dencText = "".join([charSet[(charSet.find(c)-3)%95] for c in clearText])
+    print(dencText)
+                      
     Credentials.close()   
 
-choice = ''  
+choice = ''
 
 # Set an initial value for choice other than the value for 'quit'.
 while choice != 'q':
@@ -40,13 +50,13 @@ while choice != 'q':
     choice = input("\nChoose 1, 2 or q: ")                                  # Ask for the user's choice.
 
     if choice == '1':                                                       #  Respond to the user's choice. 
-        Add()                
+        Add() 
     elif choice == '2':
         View()                           
     elif choice == 'q':
         print("\nExit\n")  
-    else:
-        print("\nInvalid entry, please try again.\n")          
-         
+    else:                       
+        print("\nInvalid entry, please choose 1, 2 or q(to quit)\n")   
+
 print("Document is now closed")
 
